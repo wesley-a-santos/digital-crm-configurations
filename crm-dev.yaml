@@ -29,13 +29,8 @@ spring:
     jdbc:
       dialect: mysql
 
-server:
-  port: ${SERVER_PORT:8080}
-  servlet:
-    context-path: /api
-
-
-springdoc:
-  paths-to-match: /**
-  swagger-ui:
-    use-root-path: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: wesley
+    password: "S#phi@2601"
