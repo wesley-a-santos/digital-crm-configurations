@@ -8,7 +8,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: 936nbm51QemjwLw74C
     url: jdbc:mysql://localhost:3306/crm?useTimezone=true&serverTimezone=UTC
-    username: crm_user
+    username: user
     hikari:
       minimum-idle: 5
       maximum-pool-size: 50
