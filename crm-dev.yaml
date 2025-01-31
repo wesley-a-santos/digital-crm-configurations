@@ -6,9 +6,9 @@ spring:
     name: crm
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    password: ${SPRING_DATASOURCE_PASSWORD:936nbm51QemjwLw74C}
-    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/crm?useTimezone=true&serverTimezone=UTC}
-    username: ${SPRING_DATASOURCE_USERNAME:crm_user}
+    password: 936nbm51QemjwLw74C
+    url: jdbc:mysql://localhost:3306/crm?useTimezone=true&serverTimezone=UTC
+    username: crm_user
     hikari:
       minimum-idle: 5
       maximum-pool-size: 50
@@ -21,7 +21,7 @@ spring:
     show-sql: false
     open-in-view: false
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     properties:
       hibernate:
         format_sql: false

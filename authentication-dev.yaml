@@ -6,7 +6,7 @@ spring:
     driver-class-name: org.postgresql.Driver
     password: 936nbm51QemjwLw74C
     url: jdbc:postgresql://localhost:5432/security
-    username: security_user
+    username: user
     hikari:
       minimum-idle: 5
       maximum-pool-size: 50
@@ -30,5 +30,5 @@ spring:
   rabbitmq:
     host: localhost
     port: 5672
-    username: wesley
-    password: "S#phi@2601"
+    username: guest
+    password: guest
