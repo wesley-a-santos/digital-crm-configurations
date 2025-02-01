@@ -1,7 +1,7 @@
-
 spring:
-  application:
-    name: authentication
+  config:
+    activate:
+      on-profile: dev
   datasource:
     driver-class-name: org.postgresql.Driver
     password: 936nbm51QemjwLw74C
@@ -16,13 +16,13 @@ spring:
       pool-name: hikari-jdbc-pool-security
       auto-commit: true
   jpa:
-    show-sql: false
-    open-in-view: false
+    show-sql: true
+    open-in-view: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     properties:
       hibernate:
-        format_sql: false
+        format_sql: true
   data:
     jdbc:
       dialect: postgresql
@@ -32,3 +32,12 @@ spring:
     port: 5672
     username: RabbitMQ
     password: RabbitMQ
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka

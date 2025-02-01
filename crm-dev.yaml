@@ -2,8 +2,6 @@ spring:
   config:
     activate:
       on-profile: dev
-  application:
-    name: crm
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: 936nbm51QemjwLw74C
@@ -18,13 +16,13 @@ spring:
       pool-name: hikari-jdbc-pool-crm
       auto-commit: true
   jpa:
-    show-sql: false
-    open-in-view: false
+    show-sql: true
+    open-in-view: true
     hibernate:
       ddl-auto: update
     properties:
       hibernate:
-        format_sql: false
+        format_sql: true
   data:
     jdbc:
       dialect: mysql
@@ -34,3 +32,12 @@ spring:
     port: 5672
     username: RabbitMQ
     password: RabbitMQ
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka
