@@ -13,7 +13,7 @@ management:
       probes:
         enabled: true
     shutdown:
-      enabled: unrestricted
+      enabled: true
   info:
     env:
       enabled: true
