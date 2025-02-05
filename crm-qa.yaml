@@ -1,7 +1,7 @@
 spring:
   config:
     activate:
-      on-profile: dev
+      on-profile: qa
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: 936nbm51QemjwLw74C
