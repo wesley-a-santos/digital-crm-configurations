@@ -1,14 +1,12 @@
 spring:
   config:
     activate:
-      on-profile: prd
-  application:
-    name: crm
+      on-profile: dev
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    password: ${SPRING_DATASOURCE_PASSWORD:936nbm51QemjwLw74C}
-    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/crm?useTimezone=true&serverTimezone=UTC}
-    username: ${SPRING_DATASOURCE_USERNAME:crm_user}
+    password: 936nbm51QemjwLw74C
+    url: jdbc:mysql://localhost:3306/crm?useTimezone=true&serverTimezone=UTC
+    username: user
     hikari:
       minimum-idle: 5
       maximum-pool-size: 50
@@ -18,24 +16,28 @@ spring:
       pool-name: hikari-jdbc-pool-crm
       auto-commit: true
   jpa:
-    show-sql: false
-    open-in-view: false
+    show-sql: true
+    open-in-view: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     properties:
       hibernate:
-        format_sql: false
+        format_sql: true
   data:
     jdbc:
       dialect: mysql
 
-server:
-  port: ${SERVER_PORT:8080}
-  servlet:
-    context-path: /api
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: RabbitMQ
+    password: RabbitMQ
 
-
-springdoc:
-  paths-to-match: /**
-  swagger-ui:
-    use-root-path: true
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka

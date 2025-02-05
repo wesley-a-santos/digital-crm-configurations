@@ -18,5 +18,5 @@ management:
 info:
   app:
     name: ${spring.application.name}
-    description: Client Relationship Management
+    description: Gateway Server
     version: 0.0.1-SNAPSHOT
